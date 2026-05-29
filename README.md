@@ -34,18 +34,18 @@ It integrates a **backend PDF generator** with a **frontend form UI**, templates
 
 ## 📂 Project Structure
 
-**frontend-support-pdf-generator/
-│
+frontend-support-pdf-generator/
+
 ├── pdf-generator/
-│   └── main.py
+│   └── main.py              # Python backend PDF generator
 │
 ├── frontend/
 │   ├── pages/
 │   │   └── api/
-│   │       └── generate-pdf.js
+│   │       └── generate-pdf.js   # API route for PDF generation
 │   └── components/
-│       ├── ComplaintForm.js
-│       └── FAQ.js
+│       ├── ComplaintForm.js      # Next.js form component
+│       └── FAQ.js                # FAQ/help component
 │
 ├── templates/
 │   ├── ftc_template.txt
@@ -53,10 +53,9 @@ It integrates a **backend PDF generator** with a **frontend form UI**, templates
 │   └── class_action_template.txt
 │
 ├── assets/
-│   └── cover.png
+│   └── cover.png                 # Placeholder image
 │
-└── README.md**
-
+└── README.md
 ---
 
 ## 🛠️ Setup Instructions
