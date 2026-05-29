@@ -33,7 +33,7 @@ It integrates a **backend PDF generator** with a **frontend form UI**, templates
 ---
 
 ## 📂 Project Structure
-
+```
 frontend-support-pdf-generator/
 ├── pdf-generator/
 │   └── main.py              # Python backend PDF generator
@@ -54,13 +54,13 @@ frontend-support-pdf-generator/
 ├── assets/
 │   └── cover.png                 # Placeholder image
 │
-└── README.md                   
+└── README.md
 ---
-
+```
 ## 🛠️ Setup Instructions
 
 ### Backend (Python)
-```bash
+
 cd frontend-support-pdf-generator/pdf-generator
 pip install reportlab pillow
 python main.py
