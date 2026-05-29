@@ -30,7 +30,7 @@ It integrates a **backend PDF generator** with a **frontend form UI**, templates
 - **Frontend UI** with Next.js form + FAQ.  
 - **Cover Image** embedded from `assets/cover.png`.  
 
-'''
+---
 
 ## 📂 Project Structure
 
@@ -55,7 +55,7 @@ frontend-support-pdf-generator/
 │   └── cover.png                 # Placeholder image
 │
 └── README.md                   
-'''
+---
 
 ## 🛠️ Setup Instructions
 
