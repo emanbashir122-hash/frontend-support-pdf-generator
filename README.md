@@ -1,4 +1,4 @@
-# 📝 Frontend Support & PDF Generator
+# 📝 FairPrice Watchdog API
 
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
@@ -35,27 +35,22 @@ It integrates a **backend PDF generator** with a **frontend form UI**, templates
 ## 📂 Project Structure
 
 frontend-support-pdf-generator/
-
 ├── pdf-generator/
 │   └── main.py              # Python backend PDF generator
-│
-├── frontend/
-│   ├── pages/
+├── frontend/                 #
+│   ├── pages/                #
 │   │   └── api/
 │   │       └── generate-pdf.js   # API route for PDF generation
-│   └── components/
+│   └── components/               #
 │       ├── ComplaintForm.js      # Next.js form component
 │       └── FAQ.js                # FAQ/help component
-│
-├── templates/
-│   ├── ftc_template.txt
-│   ├── state_ag_template.txt
-│   └── class_action_template.txt
-│
-├── assets/
+├── templates/                     #
+│   ├── ftc_template.txt            #
+│   ├── state_ag_template.txt       #
+│   └── class_action_template.txt    #
+├── assets/                          #
 │   └── cover.png                 # Placeholder image
-│
-└── README.md
+└── README.md                      #
 ---
 
 ## 🛠️ Setup Instructions
