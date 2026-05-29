@@ -1,0 +1,58 @@
+from reportlab.lib.pagesizes import LETTER
+from reportlab.pdfgen import canvas
+from datetime import datetime
+import hashlib, os, json
+
+def generate_hash_chain(files):
+    chain = []
+    prev_hash = ""
+    for f in files:
+        with open(f, "rb") as file:
+            data = file.read()
+            file_hash = hashlib.sha256(data + prev_hash.encode()).hexdigest()
+            chain.append((f, file_hash))
+            prev_hash = file_hash
+    return chain
+
+def create_pdf(data, output_file="complaint.pdf"):
+    c = canvas.Canvas(output_file, pagesize=LETTER)
+    width, height = LETTER
+
+    # Header
+    c.setFont("Helvetica-Bold", 16)
+    c.drawString(72, height - 72, f"{data['complaintType']} Complaint")
+
+    # Timestamp
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    c.setFont("Helvetica", 12)
+    c.drawString(72, height - 100, f"Generated on: {timestamp}")
+
+    # Complaint details
+    c.drawString(72, height - 130, f"Name: {data['name']}")
+    c.drawString(72, height - 150, f"Email: {data['email']}")
+    c.drawString(72, height - 170, f"Description: {data['description']}")
+
+    # Hash chain (dummy evidence files for now)
+    evidence_files = ["assets/cover.png"]
+    chain = generate_hash_chain(evidence_files)
+    y = height - 220
+    c.setFont("Courier", 10)
+    c.drawString(72, y, "SHA-256 Hash Chain:")
+    y -= 20
+    for fname, h in chain:
+        c.drawString(72, y, f"{fname}: {h}")
+        y -= 20
+
+    c.save()
+    return output_file
+
+if __name__ == "__main__":
+    # Example run
+    sample_data = {
+        "name": "John Doe",
+        "email": "john@example.com",
+        "complaintType": "FTC",
+        "description": "This is a sample complaint."
+    }
+    create_pdf(sample_data)
+    print("PDF generated successfully!")
