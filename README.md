@@ -1,4 +1,5 @@
-<p align="center">
+<p align="center">![Uploading image.png…]()
+
   <img src="docs/assets/logo.png" alt="FairPrice Watchdog" width="180" />
 </p>
 
